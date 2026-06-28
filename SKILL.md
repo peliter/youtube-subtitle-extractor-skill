@@ -1,3 +1,8 @@
+---
+name: youtube-subtitles
+description: Extracts and generates Traditional Chinese subtitles (.srt) from YouTube URLs. Use this skill ONLY when the user provides a YouTube URL and asks to extract, download, or transcribe its subtitles.
+---
+
 # YouTube Subtitle Extractor Skill
 
 This skill extracts subtitles from YouTube videos. It prioritizes Traditional Chinese subtitles. If none exist, it will use `yt-dlp` to download the audio and `faster-whisper` (running locally on CPU/GPU) to generate a high-quality Traditional Chinese transcript.
@@ -9,7 +14,7 @@ Before running the extractor script for the first time on a new system, you **MU
 1. **System Requirement**: Ensure `ffmpeg` is installed and available in the system's PATH.
 2. **Python Dependencies**: Run the following command to install required packages:
    ```bash
-   pip install -r C:\Users\biop1\.opencode\skill\youtube-subtitles\requirements.txt
+   pip install -r C:\Users\biop1\.config\opencode\skills\youtube-subtitles\requirements.txt
    ```
    *(If you are running on a different system, adjust the path to the `requirements.txt` accordingly).*
 
@@ -20,7 +25,7 @@ When the user asks you to extract subtitles for a YouTube URL, use your terminal
 ```bash
 # Optional but recommended for Windows: Set encoding to avoid console errors
 set PYTHONUTF8=1
-python C:\Users\biop1\.opencode\skill\youtube-subtitles\yt_sub_extractor.py "<YOUTUBE_URL>" --output "<OUTPUT_DIR>"
+python C:\Users\biop1\.config\opencode\skills\youtube-subtitles\yt_sub_extractor.py "<YOUTUBE_URL>" --output "<OUTPUT_DIR>"
 ```
 
 ### Script Arguments:
